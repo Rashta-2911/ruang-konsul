@@ -9,6 +9,22 @@ class Produk extends Model
 {
     use HasFactory;
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($produk) {
+            if (empty($produk->produkId)) {
+                $last = static::where('produkId', 'like', 'PA%')
+                    ->orderBy('produkId', 'desc')
+                    ->value('produkId');
+
+                $nextNumber = $last ? ((int) substr($last, 2)) + 1 : 1;
+                $produk->produkId = 'PA' . str_pad($nextNumber, 3, '0', STR_PAD_LEFT);
+            }
+        });
+    }
+
     // Produk table does not have Laravel timestamps
     public $timestamps = false;
 

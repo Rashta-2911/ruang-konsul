@@ -9,7 +9,7 @@
                         <li class="list-inline-item">
                             <a href="mailto:ruangkonsul@gmail.com">
                                 <i class="icofont-support-faq mr-2"></i>
-                                ruangkonsul@gmail.com
+                                ruangkonsul0220@gmail.com
                             </a>
                         </li>
                         <li class="list-inline-item">
@@ -128,7 +128,7 @@
                                 @forelse($cartItems as $item)
                                     <div class="d-flex mb-3 border-bottom pb-2">
                                         <div style="width:50px; height:50px;">
-                                            <img src="{{ asset($item->produk->gambar ?? '') }}"
+                                            <img src="{{ asset('storage/' . ($item->produk->gambar ?? '')) }}"
                                                  style="width:100%; height:100%; object-fit:cover;">
                                         </div>
 
@@ -150,7 +150,7 @@
                                     @foreach(session('cart') as $item)
                                         <div class="d-flex mb-3 border-bottom pb-2">
                                             <div style="width:50px; height:50px;">
-                                                <img src="{{ asset($item['gambar']) }}"
+                                                <img src="{{ asset('storage/' . $item['gambar']) }}"
                                                      style="width:100%; height:100%; object-fit:cover;">
                                             </div>
 

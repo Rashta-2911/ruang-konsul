@@ -8,7 +8,8 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('chat_messages', function (Blueprint $table) {
+        if (! Schema::hasTable('chat_messages')) {
+            Schema::create('chat_messages', function (Blueprint $table) {
             $table->id();
             $table->string('chatDokterId');
             $table->string('customerId')->nullable();
@@ -19,7 +20,8 @@ return new class extends Migration
             
             // Foreign key
             $table->foreign('chatDokterId')->references('chatDokterId')->on('chat_dokter')->onDelete('cascade');
-        });
+            });
+        }
     }
 
     public function down()

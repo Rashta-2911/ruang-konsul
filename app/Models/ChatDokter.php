@@ -13,13 +13,27 @@ class ChatDokter extends Model
     protected $keyType = 'string';
     public $timestamps = false;
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($chatDokter) {
+            if (empty($chatDokter->chatDokterId)) {
+                $last = static::orderBy('chatDokterId', 'desc')->first();
+                $nextId = $last ? 'CD' . str_pad((int)substr($last->chatDokterId, 2) + 1, 3, '0', STR_PAD_LEFT) : 'CD001';
+                $chatDokter->chatDokterId = $nextId;
+            }
+        });
+    }
+
     protected $fillable = [
         'chatDokterId',
         'customerId',
         'dokterId',   // ✅ benar
         'date',
         'status',
-        'gambar'
+        'gambar',
+        'price'
     ];
 
     // Relasi ke dokter

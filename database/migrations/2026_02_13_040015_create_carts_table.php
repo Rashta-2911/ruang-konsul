@@ -11,7 +11,8 @@ return new class extends Migration
      */
     public function up()
 {
-    Schema::create('carts', function (Blueprint $table) {
+    if (! Schema::hasTable('carts')) {
+        Schema::create('carts', function (Blueprint $table) {
         $table->id();
         $table->string('customerId');
         $table->string('produkId');
@@ -27,7 +28,8 @@ return new class extends Migration
               ->references('produkId')
               ->on('produks')
               ->onDelete('cascade');
-    });
+        });
+    }
 }
 
 

@@ -20,7 +20,7 @@
 					<div class="btn-container ">
 						<a href="{{ url('/appointment') }}"
                         class="btn btn-main-2 btn-icon btn-round-full">
-                        Buat Janji Layanan
+                        BUAT JANJI LAYANAN
                         <i class="icofont-simple-right ml-2"></i>
                         </a>
 					</div>
@@ -29,6 +29,30 @@
 		</div>
 	</div>
 </section>
+
+@if(auth('customer')->check())
+    @php
+        $hasAppointments = \App\Models\FormAppointment::where('customerId', auth('customer')->user()->customerId)->exists();
+    @endphp
+    
+    @if($hasAppointments)
+    <section class="section view-schedule-cta" style="background: #f4f9fc; padding: 40px 0; border-bottom: 1px solid rgba(0,0,0,0.05);">
+        <div class="container text-center">
+            <div class="row align-items-center">
+                <div class="col-lg-8 text-lg-left">
+                    <h4 class="mb-2" style="color: #223a66;">Anda memiliki jadwal janji temu yang aktif.</h4>
+                    <p class="mb-lg-0">Klik tombol di samping untuk melihat detail jadwal dan riwayat konsultasi Anda.</p>
+                </div>
+                <div class="col-lg-4 text-lg-right mt-3 mt-lg-0">
+                    <a href="{{ route('appointment.schedule') }}" class="btn btn-main-2 btn-round-full shadow-sm">
+                        <i class="icofont-calendar mr-2"></i> LIHAT JADWAL SAYA
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    @endif
+@endif
 
 <section class="section about gray-bg">
 	<div class="container">
@@ -66,15 +90,15 @@
 						</li>
 					</ul>
 
-					<a href="{{ url('/penjelasan') }}" class="btn btn-main btn-round-full mt-3">
-						Pelajari Lebih Lanjut
+					<a href="{{ url('/penjelasan') }}" class="btn btn-main-2 btn-icon btn-round-full mt-3">
+						PELAJARI LEBIH LANJUT <i class="icofont-simple-right ml-2"></i>
 					</a>
 				</div>
 			</div>
 
 			<!-- KANAN -->
 			<div class="col-lg-6 mt-4 mt-lg-0">
-				<img src="images/about/img-2.jpg" class="img-fluid rounded shadow" alt="Tentang RuangKonsul">
+				<img src="images/about/Beranda.jpeg" class="img-fluid rounded shadow" alt="Tentang RuangKonsul">
 			</div>
 
 		</div>
@@ -102,8 +126,8 @@
 						pengelolaan penyakit kronis, serta gizi dan nutrisi.
 					</p>
 
-					<a href="{{ url('/produk') }}" class="btn btn-main btn-round-full">
-						Jelajahi Layanan
+					<a href="{{ url('/produk') }}" class="btn btn-main-2 btn-icon btn-round-full">
+						JELAJAHI LAYANAN <i class="icofont-simple-right ml-2"></i>
 					</a>
 					</div>
 
@@ -310,16 +334,20 @@
             </div>
 
             <div class="col-lg-6">
-                <h2 class="mb-2 title-color">Our Doctors</h2>
-                <p class="mb-4">
-                    Seluruh tenaga kerja kesehatan RuangKonsul sudah memiliki
-                    standarisasi sesuai bidangnya.
-                </p>
+				<h2 class="mb-2 title-color">Our Doctors</h2>
+				<p class="mb-4" style="text-align: justify;">
+					Seluruh tenaga kerja kesehatan RuangKonsul telah memiliki standarisasi 
+					kompetensi sesuai dengan bidang keahlian masing-masing serta berpengalaman 
+					dalam memberikan pelayanan medis secara profesional. Tim dokter kami siap 
+					memberikan konsultasi kesehatan secara cepat, aman, dan terpercaya guna 
+					membantu Anda mendapatkan solusi terbaik untuk setiap permasalahan kesehatan 
+					yang dihadapi, kapan pun dan di mana pun Anda berada.
+				</p>
 
                 <!-- BUTTON SAJA -->
                 <a href="{{ route('landing.dokter.kategori') }}"
-                   class="btn btn-main btn-round-full">
-                   Jelajahi Dokter
+                   class="btn btn-main-2 btn-icon btn-round-full">
+                   JELAJAHI DOKTER <i class="icofont-simple-right ml-2"></i>
                 </a>
             </div>
 

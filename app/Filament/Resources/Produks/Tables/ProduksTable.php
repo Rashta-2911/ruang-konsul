@@ -1,0 +1,48 @@
+<?php
+
+namespace App\Filament\Resources\Produks\Tables;
+
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\EditAction;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ImageColumn; // ✅ tambah import ini
+use Filament\Tables\Table;
+
+
+class ProduksTable
+{
+    public static function configure(Table $table): Table
+    {
+        return $table
+            ->columns([
+                TextColumn::make('produkId')
+                    ->searchable(),
+                TextColumn::make('produkName')
+                    ->searchable(),
+                TextColumn::make('price')
+                    ->money()
+                    ->sortable(),
+                TextColumn::make('qty')
+                    ->numeric()
+                    ->sortable(),
+                ImageColumn::make('gambar')
+                    ->disk('public')        // ✅ ambil dari storage/app/public
+                    ->width(60)
+                    ->height(60),           // ✅ hapus ->directory(), path sudah tersimpan lengkap di DB
+                TextColumn::make('kategoriId')
+                    ->searchable(),
+                TextColumn::make('adminId')
+                    ->searchable(),
+            ])
+            ->filters([])
+            ->recordActions([
+                EditAction::make(),
+            ])
+            ->toolbarActions([
+                BulkActionGroup::make([
+                    DeleteBulkAction::make(),
+                ]),
+            ]);
+    }
+}

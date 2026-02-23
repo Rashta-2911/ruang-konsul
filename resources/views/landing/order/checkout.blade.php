@@ -19,7 +19,7 @@
                         @foreach($cartItems as $item)
                         <li class="list-group-item d-flex align-items-center px-0 py-3 border-0">
                             <div class="me-3" style="width:72px; height:72px; overflow:hidden; border-radius:8px;">
-                                <img src="{{ asset($item->produk->gambar ?? '') }}" alt="" style="width:100%;height:100%;object-fit:cover;">
+                                <img src="{{ asset('storage/' . ($item->produk->gambar ?? '')) }}" alt="" style="width:100%;height:100%;object-fit:cover;">
                             </div>
                             <div class="flex-grow-1">
                                 <div class="fw-bold">{{ $item->produk->produkName ?? 'Produk' }}</div>

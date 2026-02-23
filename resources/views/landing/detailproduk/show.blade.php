@@ -18,7 +18,7 @@
 <section class="py-5">
 <div class="container">
 
-@if($produks->count()>0)
+@if($produks->count() > 0)
 <div class="row">
 
 @foreach($produks as $produk)
@@ -27,50 +27,59 @@
 <div class="detail-product-card">
 
 <div class="detail-product-image">
-@if($produk->gambar)
-<img src="{{ asset($produk->gambar) }}">
-@endif
 
-@if($produk->qty==0)
-<span class="detail-badge-stock detail-out-of-stock">Stok Habis</span>
-@elseif($produk->qty<10)
-<span class="detail-badge-stock detail-low-stock">Stok Terbatas</span>
-@else
-<span class="detail-badge-stock detail-in-stock">Tersedia</span>
-@endif
+  {{-- ✅ FIX: Gambar sekarang dibaca dari storage (Filament FileUpload) --}}
+  @if($produk->gambar)
+    <img src="{{ asset('storage/' . $produk->gambar) }}"
+         alt="{{ $produk->produkName }}"
+         style="width:100%; height:220px; object-fit:cover;">
+  @else
+    <img src="{{ asset('images/no-image.png') }}"
+         alt="No Image"
+         style="width:100%; height:220px; object-fit:cover; background:#f0f0f0;">
+  @endif
+
+  @if($produk->qty == 0)
+    <span class="detail-badge-stock detail-out-of-stock">Stok Habis</span>
+  @elseif($produk->qty < 10)
+    <span class="detail-badge-stock detail-low-stock">Stok Terbatas</span>
+  @else
+    <span class="detail-badge-stock detail-in-stock">Tersedia</span>
+  @endif
+
 </div>
 
 <div class="detail-product-body">
 
-<h4 class="detail-product-name">{{ $produk->produkName }}</h4>
+  <h4 class="detail-product-name">{{ $produk->produkName }}</h4>
 
-<div class="detail-price-section">
-<div class="detail-price-value">
-  Rp {{ number_format($produk->price ?? 0,0,',','.') }}
-</div>
-<div class="detail-stock-info">
-  📦 Stok Tersedia: <strong>{{ $produk->qty }} unit</strong>
-</div>
-</div>
+  <div class="detail-price-section">
+    <div class="detail-price-value">
+      Rp {{ number_format($produk->price ?? 0, 0, ',', '.') }}
+    </div>
+    <div class="detail-stock-info">
+      📦 Stok Tersedia: <strong>{{ $produk->qty }} unit</strong>
+    </div>
+  </div>
 
-@if($produk->qty>0)
-<div class="detail-product-buttons">
-<button type="button"
-        class="detail-btn-cart-outline add-to-cart-btn"
-        data-id="{{ $produk->produkId }}">
-    <i class="icofont-cart-alt"></i> Add To Cart
-</button>
+  @if($produk->qty > 0)
+    <div class="detail-product-buttons">
+      <button type="button"
+              class="detail-btn-cart-outline add-to-cart-btn"
+              data-id="{{ $produk->produkId }}">
+          <i class="icofont-cart-alt"></i> Add To Cart
+      </button>
 
-<button type="button" 
-        class="detail-btn-buy-now buy-now-btn"
-        data-id="{{ $produk->produkId }}"
-        data-name="{{ $produk->produkName }}">
-    <i class="icofont-check"></i> Buy Now
-</button>
-</div>
-@else
-<button class="btn btn-secondary w-100" disabled>Stok Habis</button>
-@endif
+      <button type="button"
+              class="detail-btn-buy-now buy-now-btn"
+              data-id="{{ $produk->produkId }}"
+              data-name="{{ $produk->produkName }}">
+          <i class="icofont-check"></i> Buy Now
+      </button>
+    </div>
+  @else
+    <button class="btn btn-secondary w-100" disabled>Stok Habis</button>
+  @endif
 
 </div>
 </div>
@@ -82,13 +91,13 @@
 @else
 <p>Tidak ada produk.</p>
 @endif
-    
-    <!-- Quick link to cart page -->
-    <div class="container mt-5">
-      <a href="{{ route('cart.index') }}" class="btn btn-outline-primary" style="border-radius: 10px; padding: 12px 32px; font-weight: 700; border: 2px solid #223a66; color: #223a66;">
-        <i class="icofont-cart-alt"></i> Lihat Keranjang Belanja
-      </a>
-    </div>
+
+<!-- Quick link to cart page -->
+<div class="container mt-5">
+  <a href="{{ route('cart.index') }}" class="btn btn-outline-primary" style="border-radius: 10px; padding: 12px 32px; font-weight: 700; border: 2px solid #223a66; color: #223a66;">
+    <i class="icofont-cart-alt"></i> Lihat Keranjang Belanja
+  </a>
+</div>
 
 </div>
 </section>
@@ -109,7 +118,7 @@
           <input type="text" class="form-control" id="productNameDisplay" readonly style="background: #f5f7fa; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px; color: #6F8BA4;">
         </div>
         <div class="mb-4">
-          <label for="quantityInput" class="form-label" style="font-weight: 600; color: #223a66/">Jumlah Pembelian:</label>
+          <label for="quantityInput" class="form-label" style="font-weight: 600; color: #223a66;">Jumlah Pembelian:</label>
           <div style="display: flex; align-items: center; gap: 10px;">
             <button type="button" id="decreaseQty" style="width: 40px; height: 40px; border: 1px solid #e5e7eb; background: white; border-radius: 8px; cursor: pointer; font-weight: 700; color: #223a66;">−</button>
             <input type="number" class="form-control" id="quantityInput" min="1" value="1" required style="text-align: center; border-radius: 8px; font-weight: 700; font-size: 16px;">
@@ -128,11 +137,11 @@
 @push('scripts')
 <script>
 document.addEventListener('DOMContentLoaded', function(){
+
     // Handle Add to Cart
     document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
         btn.addEventListener('click', function() {
             const produkId = this.dataset.id;
-            const qty = 1;
 
             fetch('{{ route("cart.add") }}', {
                 method: 'POST',
@@ -142,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 },
                 body: JSON.stringify({
                     produk_id: produkId,
-                    qty: qty
+                    qty: 1
                 })
             })
             .then(r => r.json())
@@ -160,52 +169,43 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     });
 
-    // Handle Buy Now (Bootstrap 4: use jQuery modal)
+    // Handle Buy Now
     let selectedProductId = null;
 
     document.querySelectorAll('.buy-now-btn').forEach(btn => {
-      btn.addEventListener('click', function() {
-        selectedProductId = this.dataset.id;
-        const productName = this.dataset.name;
-            
-        document.getElementById('productNameDisplay').value = productName;
-        document.getElementById('quantityInput').value = 1;
-        $('#buyNowModal').modal('show');
-      });
+        btn.addEventListener('click', function() {
+            selectedProductId = this.dataset.id;
+            const productName = this.dataset.name;
+
+            document.getElementById('productNameDisplay').value = productName;
+            document.getElementById('quantityInput').value = 1;
+            $('#buyNowModal').modal('show');
+        });
     });
 
-    // Quantity increase/decrease buttons
+    // Quantity increase/decrease
     const quantityInput = document.getElementById('quantityInput');
-    const increaseBtn = document.getElementById('increaseQty');
-    const decreaseBtn = document.getElementById('decreaseQty');
 
-    if(increaseBtn) {
-        increaseBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            quantityInput.value = parseInt(quantityInput.value) + 1;
-        });
-    }
+    document.getElementById('increaseQty').addEventListener('click', function(e) {
+        e.preventDefault();
+        quantityInput.value = parseInt(quantityInput.value) + 1;
+    });
 
-    if(decreaseBtn) {
-        decreaseBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            const currentVal = parseInt(quantityInput.value);
-            if(currentVal > 1) {
-                quantityInput.value = currentVal - 1;
-            }
-        });
-    }
+    document.getElementById('decreaseQty').addEventListener('click', function(e) {
+        e.preventDefault();
+        const currentVal = parseInt(quantityInput.value);
+        if(currentVal > 1) quantityInput.value = currentVal - 1;
+    });
 
     // Confirm Buy Now
     document.getElementById('confirmBuyNowBtn').addEventListener('click', function() {
-        const qty = parseInt(document.getElementById('quantityInput').value);
-        
+        const qty = parseInt(quantityInput.value);
+
         if(qty < 1) {
             alert('Jumlah harus minimal 1');
             return;
         }
 
-        // Add to cart
         fetch('{{ route("cart.add") }}', {
             method: 'POST',
             headers: {
@@ -220,10 +220,9 @@ document.addEventListener('DOMContentLoaded', function(){
         .then(r => r.json())
         .then(js => {
             if(js.success) {
-            $('#buyNowModal').modal('hide');
-            // Redirect ke checkout
-            window.location.href = '{{ route("checkout") }}';
-          } else {
+                $('#buyNowModal').modal('hide');
+                window.location.href = '{{ route("checkout") }}';
+            } else {
                 alert('Error: ' + (js.error || 'Gagal menambahkan ke keranjang'));
             }
         })
@@ -232,6 +231,7 @@ document.addEventListener('DOMContentLoaded', function(){
             alert('Gagal menambahkan ke keranjang');
         });
     });
+
 });
 </script>
 @endpush

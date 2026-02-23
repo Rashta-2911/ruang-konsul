@@ -11,7 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('detailPemesanan', function (Blueprint $table) {
+        if (! Schema::hasTable('detailPemesanan')) {
+            Schema::create('detailPemesanan', function (Blueprint $table) {
             $table->string('detailPemesananId', 5)->primary();
             $table->string('pemesananId', 5);
             $table->string('produkId', 5)->nullable();
@@ -26,7 +27,8 @@ return new class extends Migration
                   ->references('produkId')
                   ->on('produkALKES')
                   ->onDelete('cascade');
-        });
+            });
+        }
     }
 
     /**

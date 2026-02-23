@@ -10,6 +10,22 @@ use App\Models\Customer;
 
 class FormAppointmentController extends Controller
 {
+    // Menampilkan daftar appointment customer
+    public function index()
+    {
+        if (!auth()->guard('customer')->check()) {
+            return redirect()->route('login');
+        }
+
+        $appointments = FormAppointment::with('dokter')
+            ->where('customerId', auth()->guard('customer')->user()->customerId)
+            ->orderBy('date', 'desc')
+            ->orderBy('time', 'desc')
+            ->get();
+
+        return view('landing.customer.appointments', compact('appointments'));
+    }
+
     // Menampilkan form
     public function create()
     {
@@ -22,11 +38,15 @@ class FormAppointmentController extends Controller
     // Menyimpan data
     public function store(Request $request)
     {
+        // Pastikan customer sudah login
+        if (!auth()->guard('customer')->check()) {
+            return redirect()->route('login')->with('error', 'Silakan login terlebih dahulu.');
+        }
+
         // Validasi input
         $request->validate([
-            'customerId' => 'required|max:5',
-            'dokterId' => 'required|max:5',
-            'date' => 'required|date',
+            'dokterId' => 'required|exists:dokter,dokterId',
+            'date' => 'required|date|after_or_equal:today',
             'time' => 'required',
             'pesan' => 'nullable|max:225',
         ]);
@@ -34,7 +54,7 @@ class FormAppointmentController extends Controller
         // Simpan data
         FormAppointment::create([
             'appointmentId' => Str::upper(Str::random(5)), // generate ID unik
-            'customerId' => $request->customerId,
+            'customerId' => auth()->guard('customer')->user()->customerId,
             'dokterId' => $request->dokterId,
             'date' => $request->date,
             'time' => $request->time,

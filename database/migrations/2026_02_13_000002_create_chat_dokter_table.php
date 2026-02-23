@@ -13,7 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('chat_dokter', function (Blueprint $table) {
+        if (! Schema::hasTable('chat_dokter')) {
+            Schema::create('chat_dokter', function (Blueprint $table) {
             $table->string('chatDokterId')->primary();
             $table->string('customerId');
             $table->string('dokterId');
@@ -21,7 +22,8 @@ return new class extends Migration
             $table->timestamp('date')->nullable();
             $table->string('status')->nullable();
             $table->string('gambar')->nullable();
-        });
+            });
+        }
     }
 
     /**

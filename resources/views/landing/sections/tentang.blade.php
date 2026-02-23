@@ -6,7 +6,6 @@
 
 @section('content')
 
-<!-- PAGE TITLE -->
 <section class="page-title bg-1">
   <div class="overlay"></div>
   <div class="container">
@@ -21,7 +20,6 @@
   </div>
 </section>
 
-<!-- ABOUT INTRO -->
 <section class="section about-page">
 	<div class="container">
 		<div class="row align-items-center">
@@ -55,14 +53,13 @@
 	</div>
 </section>
 
-<!-- KEUNGGULAN -->
 <section class="fetaure-page">
 	<div class="container">
 		<div class="row">
 
 			<div class="col-lg-3 col-md-6">
 				<div class="about-block-item mb-5 mb-lg-0 text-center">
-					<img src="images/about/about-1.jpg" alt="" class="img-fluid w-100">
+					<img src="images/about/Tentang dokter.jpeg" alt="" class="img-fluid w-100">
 					<h4 class="mt-3">Privasi Terjamin</h4>
 					<p>
 						Setiap sesi konsultasi dilakukan secara aman dan menjaga kerahasiaan
@@ -73,7 +70,7 @@
 
 			<div class="col-lg-3 col-md-6">
 				<div class="about-block-item mb-5 mb-lg-0 text-center">
-					<img src="images/about/about-2.jpg" alt="" class="img-fluid w-100">
+					<img src="images/about/Tentang dokter 1.jpeg" alt="" class="img-fluid w-100">
 					<h4 class="mt-3">Tenaga Profesional</h4>
 					<p>
 						Ditangani oleh dokter dan tenaga kesehatan yang kompeten sesuai
@@ -84,7 +81,7 @@
 
 			<div class="col-lg-3 col-md-6">
 				<div class="about-block-item mb-5 mb-lg-0 text-center">
-					<img src="images/about/about-3.jpg" alt="" class="img-fluid w-100">
+					<img src="images/about/Tentang dokter 2.jpeg" alt="" class="img-fluid w-100">
 					<h4 class="mt-3">Akses Fleksibel</h4>
 					<p>
 						Layanan konsultasi dapat diakses kapan saja dan di mana saja
@@ -95,7 +92,7 @@
 
 			<div class="col-lg-3 col-md-6">
 				<div class="about-block-item text-center">
-					<img src="images/about/about-4.jpg" alt="" class="img-fluid w-100">
+					<img src="images/about/Tentang dokter 3.webp " alt="" class="img-fluid w-100">
 					<h4 class="mt-3">Pendekatan Humanis</h4>
 					<p>
 						Kami mengedepankan empati, komunikasi yang jelas, dan solusi yang
@@ -108,7 +105,6 @@
 	</div>
 </section>
 
-<!-- PRESTASI / KREDIBILITAS -->
 <section class="section awards">
 	<div class="container">
 		<div class="row align-items-center">
@@ -136,7 +132,6 @@
 	</div>
 </section>
 
-<!-- TIM DOKTER -->
 <section class="section team">
 	<div class="container">
 		<div class="row justify-content-center">

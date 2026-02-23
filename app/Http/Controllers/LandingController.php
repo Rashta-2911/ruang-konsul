@@ -3,12 +3,23 @@
 namespace App\Http\Controllers;
 use App\Models\Dokter;
 use App\Models\Customer;
+use App\Models\FormAppointment;
+use Illuminate\Support\Facades\Auth;
 
 class LandingController extends Controller
 {
     public function index()
     {
-        return view('landing.index');
+        $appointments = [];
+        if (Auth::guard('customer')->check()) {
+            $appointments = FormAppointment::with('dokter')
+                ->where('customerId', Auth::guard('customer')->user()->customerId)
+                ->orderBy('date', 'asc')
+                ->orderBy('time', 'asc')
+                ->get();
+        }
+
+        return view('landing.index', compact('appointments'));
     }
 
     public function tentang()

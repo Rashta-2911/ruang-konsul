@@ -50,22 +50,20 @@
 
 				<p>Kesehatan merupakan fondasi utama untuk menjalani kehidupan yang produktif dan berkualitas. Pemahaman dasar tentang kondisi tubuh, seperti tekanan darah, kadar gula, dan kolesterol, sangat penting untuk mendeteksi risiko penyakit sejak dini. Banyak penyakit kronis seperti diabetes dan hipertensi sering berkembang tanpa gejala yang jelas, sehingga pemeriksaan kesehatan rutin menjadi langkah pencegahan yang efektif.
 
-				Selain kesehatan fisik, kesehatan mental juga memiliki peran yang sama pentingnya. Stres, kecemasan, dan depresi merupakan kondisi yang berbeda dan perlu dikenali sejak awal. Di era modern, tekanan pekerjaan, akademik, serta penggunaan teknologi yang berlebihan dapat memicu burnout. Menjaga kesehatan mental dapat dilakukan dengan mengatur waktu istirahat, membatasi paparan digital, menerapkan self-care yang tepat, serta mencari bantuan profesional bila diperlukan.
-
-				Gaya hidup sehat menjadi kunci utama dalam menjaga keseimbangan tubuh dan pikiran. Pola tidur yang cukup, aktivitas fisik rutin, dan mengurangi kebiasaan duduk terlalu lama membantu menurunkan risiko berbagai penyakit. Olahraga ringan yang dilakukan secara konsisten sudah cukup memberikan manfaat besar bagi kesehatan.
-
-				Pola makan seimbang juga berperan penting dalam menjaga daya tahan tubuh. Mengonsumsi makanan bergizi, membatasi gula, garam, dan lemak, serta menghindari pola diet ekstrem membantu tubuh tetap sehat dalam jangka panjang. Sarapan sehat dan pemilihan makanan yang tepat juga berpengaruh pada energi dan konsentrasi sepanjang hari.
-
-				Kebutuhan kesehatan setiap individu berbeda-beda berdasarkan usia dan kondisi. Anak membutuhkan pemantauan tumbuh kembang dan imunisasi, wanita perlu memperhatikan kesehatan reproduksi, sementara lansia memerlukan perhatian khusus terhadap kesehatan tulang dan penyakit kronis. Pencegahan penyakit melalui gaya hidup sehat dan kesadaran diri menjadi langkah terbaik untuk menjaga kualitas hidup.</p>
+				Selain kesehatan fisik, kesehatan mental juga memiliki peran yang sama pentingnya. Stres, kecemasan, dan depresi merupakan kondisi yang berbeda dan perlu dikenali sejak awal. Di era modern, tekanan pekerjaan, akademik, serta penggunaan teknologi yang berlebihan dapat memicu burnout. Menjaga kesehatan mental dapat dilakukan dengan mengatur waktu istirahat, membatasi paparan digital, menerapkan self-care yang tepat, serta mencari bantuan profesional bila diperlukan.</p>
 
 				<blockquote class="quote">
-					A brand for a company is like a reputation for a person. You earn reputation by trying to do hard things well.
+					Menjaga kesehatan adalah investasi terbaik agar dapat menikmati hidup dengan bahagia.
 				</blockquote>
 
 				
-				<p class="lead mb-4 font-weight-normal text-black">The same is true as we experience the emotional sensation of stress from our first instances of social rejection ridicule. We quickly learn to fear and thus automatically.</p>
+				<p class="lead mb-4 font-weight-normal text-black">
+                RuangKonsul hadir untuk membantu Anda mendapatkan layanan konsultasi kesehatan secara mudah, cepat, dan terpercaya. Kami memahami bahwa setiap keluhan kesehatan membutuhkan penanganan yang tepat dari tenaga profesional.
+                </p>
 
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, rerum beatae repellat tenetur incidunt quisquam libero dolores laudantium. Nesciunt quis itaque quidem, voluptatem autem eos animi laborum iusto expedita sapiente.</p>
+                <p>
+                Melalui platform ini, Anda dapat berkonsultasi langsung dengan tenaga medis berpengalaman kapan saja dan di mana saja tanpa harus datang ke fasilitas kesehatan. Dapatkan informasi, saran, dan solusi terbaik untuk menjaga kesehatan Anda dan keluarga dengan layanan yang aman dan nyaman.
+                </p>
 
 				<div class="mt-5 clearfix">
 				    <ul class="float-left list-inline tag-option"> 
@@ -88,77 +86,103 @@
 
 	<div class="col-lg-12">
 		<div class="comment-area mt-4 mb-5">
-			<h4 class="mb-4">2 Comments on Healthy environment... </h4>
-			<ul class="comment-tree list-unstyled">
-				<li class="mb-5">
-					<div class="comment-area-box">
-						<div class="comment-thumb float-left">
-							<img alt="" src="images/blog/testimonial1.jpg" class="img-fluid">
-						</div>
+    <h4 class="mb-4">2 Comments on Healthy environment... </h4>
 
-						<div class="comment-info">
-							<h5 class="mb-1">John</h5>
-							<span>United Kingdom</span>
-							<span class="date-comm">| Posted April 7, 2019</span>
-						</div>
-						<div class="comment-meta mt-2">
-							<a href="#"><i class="icofont-reply mr-2 text-muted"></i>Reply</a>
-						</div>
+    <ul class="comment-tree list-unstyled">
 
-						<div class="comment-content mt-3">
-							<p>Some consultants are employed indirectly by the client via a consultancy staffing company, a company that provides consultants on an agency basis. </p>
-						</div>
-					</div>
-				</li>
+        <!-- COMMENT 1 -->
+        <li class="mb-4">
+            <div class="comment-area-box">
+                
+                <div class="comment-thumb">
+                    <img src="images/blog/testi 2.jpeg" alt="user">
+                </div>
 
-				<li>
-					<div class="comment-area-box">
-						<div class="comment-thumb float-left">
-							<img alt="" src="images/blog/testimonial2.jpg" class="img-fluid">
-						</div>
+                <div class="comment-details">
+                    <div class="comment-info">
+                        <h5>Andiana</h5>
+                        <span>Indonesia</span>
+                        <span class="date-comm">| Diposting 20 Februari 2026</span>
+                    </div>
 
-						<div class="comment-info">
-							<h5 class="mb-1">Philip W</h5>
-							<span>United Kingdom</span>
-							<span class="date-comm">| Posted June 7, 2019</span>
-						</div>
+                    <div class="comment-meta">
+                        <a href="#"><i class="icofont-reply"></i> Balas</a>
+                    </div>
 
-						<div class="comment-meta mt-2">
-							<a href="#"><i class="icofont-reply mr-2 text-muted"></i>Reply </a>
-						</div>
+                    <div class="comment-content">
+                        <p>
+                            Layanan RuangKonsul sangat membantu saya dalam mendapatkan informasi kesehatan dengan cepat.
+                            Saya bisa berkonsultasi langsung dengan tenaga medis tanpa harus datang ke klinik,
+                            sehingga lebih praktis dan nyaman.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </li>
 
-						<div class="comment-content mt-3">
-							<p>Some consultants are employed indirectly by the client via a consultancy staffing company, a company that provides consultants on an agency basis. </p>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</div>
+        <!-- COMMENT 2 -->
+        <li>
+            <div class="comment-area-box">
+                
+                <div class="comment-thumb">
+                    <img src="images/blog/testi 3.jpeg" alt="user">
+                </div>
+
+                <div class="comment-details">
+                    <div class="comment-info">
+                        <h5>Nanda</h5>
+                        <span>Indonesia</span>
+                        <span class="date-comm">| Diposting 20 Februari 2026</span>
+                    </div>
+
+                    <div class="comment-meta">
+                        <a href="#"><i class="icofont-reply"></i> Balas</a>
+                    </div>
+
+                    <div class="comment-content">
+                        <p>
+                            Saya sangat terbantu dengan layanan konsultasi di RuangKonsul. Prosesnya mudah,
+                            respon dari tenaga medis cepat, dan saya bisa mendapatkan saran kesehatan
+                            tanpa harus keluar rumah.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </li>
+
+    </ul>
+</div>
 	</div>
 
 
 	<div class="col-lg-12">
-		<form class="comment-form my-5" id="comment-form">
-			<h4 class="mb-4">Write a comment</h4>
-			<div class="row">
-				<div class="col-md-6">
-					<div class="form-group">
-						<input class="form-control" type="text" name="name" id="name" placeholder="Name:">
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="form-group">
-						<input class="form-control" type="text" name="mail" id="mail" placeholder="Email:">
-					</div>
-				</div>
-			</div>
+    <form class="comment-form my-5" id="comment-form" 
+          action="https://formsubmit.co/fanggabriliando6622@gmail.com" 
+          method="POST">
+        
+        <input type="hidden" name="_subject" value="Pesan Baru dari Website!">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        
+        <h4 class="mb-4">Write a comment</h4>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="name" id="name" placeholder="Name:" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input class="form-control" type="email" name="email" id="mail" placeholder="Email:" required>
+                </div>
+            </div>
+        </div>
 
-
-			<textarea class="form-control mb-4" name="comment" id="comment" cols="30" rows="5" placeholder="Comment"></textarea>
-
-			<input class="btn btn-main-2 btn-round-full" type="submit" name="submit-contact" id="submit_contact" value="Submit Message">
-		</form>
-	</div>
+        <textarea class="form-control mb-4" name="comment" id="comment" cols="30" rows="5" placeholder="Comment" required></textarea>
+        <input class="btn btn-main-2 btn-round-full" type="submit" value="Submit Message">
+    </form>
+</div>
 </div>
             </div>
             <div class="col-lg-4">
@@ -176,61 +200,19 @@
 		<h5>Popular Posts</h5>
 
         <div class="py-2">
-        	<span class="text-sm text-muted">03 Mar 2018</span>
-            <h6 class="my-2"><a href="#">Thoughtful living in los Angeles</a></h6>
+        	<span class="text-sm text-muted">05 Mar 2018</span>
+            <h6 class="my-2"><a href="#">Kesehatan Adalah Investasi.</a></h6>
         </div>
 
         <div class="py-2">
-       		<span class="text-sm text-muted">03 Mar 2018</span>
-            <h6 class="my-2"><a href="#">Vivamus molestie gravida turpis.</a></h6>
+       		<span class="text-sm text-muted">09 Mar 2018</span>
+            <h6 class="my-2"><a href="#">Kesehatan Ditanganmu.</a></h6>
         </div>
 
         <div class="py-2">
         	<span class="text-sm text-muted">03 Mar 2018</span>
-            <h6 class="my-2"><a href="#">Fusce lobortis lorem at ipsum semper sagittis</a></h6>
+            <h6 class="my-2"><a href="#">Tubuh Sehat, Hidup Bahagia.</a></h6>
         </div>
-	</div>
-
-	<div class="sidebar-widget category mb-3">
-		<h5 class="mb-4">Categories</h5>
-
-		<ul class="list-unstyled">
-		  <li class="align-items-center">
-		    <a href="#">Medicine</a>
-		    <span>(14)</span>
-		  </li>
-		  <li class="align-items-center">
-		    <a href="#">Equipments</a>
-		    <span>(2)</span>
-		  </li>
-		  <li class="align-items-center">
-		    <a href="#">Heart</a>
-		    <span>(10)</span>
-		  </li>
-		  <li class="align-items-center">
-		    <a href="#">Free counselling</a>
-		    <span>(5)</span>
-		  </li>
-		  <li class="align-items-center">
-		    <a href="#">Lab test</a>
-		    <span>(5)</span>
-		  </li>
-		</ul>
-	</div>
-
-
-	<div class="sidebar-widget tags mb-3">
-		<h5 class="mb-4">Tags</h5>
-
-		<a href="#">Doctors</a>
-		<a href="#">agency</a>
-		<a href="#">company</a>
-		<a href="#">medicine</a>
-		<a href="#">surgery</a>
-		<a href="#">Marketing</a>
-		<a href="#">Social Media</a>
-		<a href="#">Branding</a>
-		<a href="#">Laboratory</a>
 	</div>
 
 
@@ -254,7 +236,7 @@
 
 		<div class="sidebar-contatct-info mt-4">
 			<p class="mb-0">Need Urgent Help?</p>
-			<h3>+23-4565-65768</h3>
+			<h3>+62-856-4305-0274</h3>
 		</div>
 	</div>
 

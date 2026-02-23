@@ -23,7 +23,10 @@
 
                 <div class="card doctor-card text-center pt-5">
 
-                    <img src="{{ asset($d->gambar) }}"
+                    @php
+                      $imagePath = file_exists(public_path($d->gambar)) ? asset($d->gambar) : asset('storage/' . $d->gambar);
+                    @endphp
+                    <img src="{{ $imagePath }}"
                          class="doctor-avatar"
                          alt="{{ $d->dokterName }}">
 
@@ -97,9 +100,15 @@
                         <!-- BUTTON -->
                         @auth('customer')
                             @if(isset($d->chat) && $d->chat)
-                                <a href="{{ route('landing.dokter.chat', $d->dokterId) }}" class="btn btn-success w-100">
-                                    Buka Chat
-                                </a>
+                                @if($d->chat->is_paid)
+                                    <a href="{{ route('landing.dokter.chat', $d->dokterId) }}" class="btn btn-success w-100">
+                                        <i class="icofont-chat me-1"></i> Buka Chat
+                                    </a>
+                                @else
+                                    <a href="{{ route('landing.dokter.checkoutChat', $d->chat->chatDokterId) }}" class="btn btn-warning w-100 fw-bold">
+                                        <i class="icofont-pay me-1"></i> Bayar Chat
+                                    </a>
+                                @endif
                             @else
                                 <form action="{{ route('landing.dokter.storeChat', $d->dokterId) }}" method="POST" style="display:inline; width: 100%;">
                                     @csrf

@@ -18,7 +18,7 @@
 					
 					<p class="mb-4 pr-5">Solusi konsultasi kesehatan yang praktis, profesional, dan aman untuk mendukung keputusan terbaik bagi kesehatan Anda.</p>
 					<div class="btn-container ">
-						<a href="appoinment.html" target="_blank" class="btn btn-main-2 btn-icon btn-round-full">Buat Janji Layanan<i class="icofont-simple-right ml-2  "></i></a>
+						<a href="appoinment.html" target="_blank" class="btn btn-main-2 btn-icon btn-round-full">BUAT JANJI LAYANAN <i class="icofont-simple-right ml-2"></i></a>
 					</div>
 				</div>
 			</div>
@@ -62,8 +62,8 @@
 						</li>
 					</ul>
 
-					<a href="about.html" class="btn btn-main btn-round-full mt-3">
-						Pelajari Lebih Lanjut
+					<a href="about.html" class="btn btn-main-2 btn-icon btn-round-full mt-3">
+						PELAJARI LEBIH LANJUT <i class="icofont-simple-right ml-2"></i>
 					</a>
 				</div>
 			</div>
@@ -98,8 +98,8 @@
 						pengelolaan penyakit kronis, serta gizi dan nutrisi.
 					</p>
 
-					<a href="produk.html" class="btn btn-main btn-round-full">
-						Jelajahi Layanan
+					<a href="produk.html" class="btn btn-main-2 btn-icon btn-round-full">
+						JELAJAHI LAYANAN <i class="icofont-simple-right ml-2"></i>
 					</a>
 					</div>
 

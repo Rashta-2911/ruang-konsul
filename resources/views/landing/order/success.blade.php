@@ -98,7 +98,7 @@
                                                     @if($detail->produk)
                                                         <div class="d-flex align-items-center">
                                                             <div style="width:40px;height:40px;overflow:hidden;margin-right:10px;">
-                                                                <img src="{{ asset($detail->produk->gambar ?? '') }}" style="width:100%;height:100%;object-fit:cover;">
+                                                                <img src="{{ asset('storage/' . ($detail->produk->gambar ?? '')) }}" style="width:100%;height:100%;object-fit:cover;">
                                                             </div>
                                                             <div>
                                                                 <strong>{{ $detail->produk->produkName ?? 'Produk' }}</strong><br>

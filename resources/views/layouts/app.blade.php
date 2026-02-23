@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="{{ asset('plugins/slick-carousel/slick/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/slick-carousel/slick/slick-theme.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 @stack('styles')
 
@@ -50,5 +52,50 @@
 
 
 @stack('scripts')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        @if(session('success'))
+            Swal.fire({
+                title: 'Berhasil!',
+                text: "{{ session('success') }}",
+                icon: 'success',
+                confirmButtonText: 'OKE',
+                confirmButtonColor: '#223a66',
+                timer: 3500,
+                timerProgressBar: true,
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                }
+            });
+        @endif
+
+        @if(session('error'))
+            Swal.fire({
+                title: 'Gagal!',
+                text: "{{ session('error') }}",
+                icon: 'error',
+                confirmButtonText: 'TUTUP',
+                confirmButtonColor: '#e12454',
+                showClass: {
+                    popup: 'animate__animated animate__shakeX'
+                }
+            });
+        @endif
+
+        @if(session('info'))
+            Swal.fire({
+                title: 'Informasi',
+                text: "{{ session('info') }}",
+                icon: 'info',
+                confirmButtonText: 'MENGERTI',
+                confirmButtonColor: '#223a66'
+            });
+        @endif
+    });
+</script>
 </body>
 </html>

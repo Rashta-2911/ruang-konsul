@@ -31,6 +31,16 @@ class FormAppointment extends Model
         'pesan'
     ];
 
-    // Nonaktifkan timestamp jika tabel tidak punya created_at & updated_at
-    public $timestamps = false;
+    // Aktifkan timestamp karena tabel punya created_at & updated_at
+    public $timestamps = true;
+
+    public function dokter()
+    {
+        return $this->belongsTo(Dokter::class, 'dokterId', 'dokterId');
+    }
+
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class, 'customerId', 'customerId');
+    }
 }

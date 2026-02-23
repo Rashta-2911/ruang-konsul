@@ -11,7 +11,10 @@
         <div class="col-md-4 mb-4">
             <div class="card doctor-card border-0 shadow-sm h-100">
                 
-                <img src="{{ asset($d->gambar) }}"
+                @php
+                  $imagePath = file_exists(public_path($d->gambar)) ? asset($d->gambar) : asset('storage/' . $d->gambar);
+                @endphp
+                <img src="{{ $imagePath }}"
                      class="card-img-top doctor-img">
 
                 <div class="card-body">

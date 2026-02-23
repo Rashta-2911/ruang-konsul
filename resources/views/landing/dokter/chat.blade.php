@@ -41,6 +41,7 @@
 
     .doctor-avatar-container {
         position: relative;
+        margin-right: 25px;
     }
 
     .doctor-avatar {
@@ -435,10 +436,13 @@
         <!-- HEADER DOKTER -->
         <div class="doctor-header">
             <div class="doctor-card-header">
-                <div class="d-flex align-items-start gap-4" style="flex: 1;">
+                <div class="d-flex align-items-start" style="flex: 1;">
 
                     <div class="doctor-avatar-container">
-                        <img src="{{ asset($dokter->gambar) }}"
+                    @php
+                      $imagePath = file_exists(public_path($dokter->gambar)) ? asset($dokter->gambar) : asset('storage/' . $dokter->gambar);
+                    @endphp
+                        <img src="{{ $imagePath }}"
                              class="doctor-avatar"
                              alt="{{ $dokter->dokterName }}">
                         <div class="doctor-status-badge">✓</div>
@@ -662,6 +666,9 @@
         .then(data => {
             if (data.success) {
                 displayMessage(data.message, 'customer');
+                if (data.reply) {
+                    displayMessage(data.reply, 'dokter');
+                }
                 messageInput.value = '';
                 messageInput.focus();
             } else {

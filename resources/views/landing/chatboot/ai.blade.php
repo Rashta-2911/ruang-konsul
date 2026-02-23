@@ -145,6 +145,10 @@
 
     <div id="chatbotMessages" class="chat-messages"></div>
 
+    <div style="padding: 5px 15px; background: #fffbe6; font-size: 11px; color: #856404; border-top: 1px solid #ffe58f;">
+        <i class="icofont-info-circle"></i> Chatbot ini hanya melayani pertanyaan seputar kesehatan & layanan RuangKonsul.
+    </div>
+
     <div class="chat-input">
         <input type="text" id="chatInput" placeholder="Tulis pesan..." />
         <button id="sendMessage">Kirim</button>
@@ -171,7 +175,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     /* welcome message */
-    appendMessage("Bot","Halo 👋 Selamat datang di RuangKonsul. Silakan tanyakan kebutuhan kesehatan Anda.");
+    appendMessage("Bot","Halo 👋 Selamat datang di <b>RuangKonsul</b>. Saya asisten AI yang siap membantu menjawab pertanyaan Anda seputar <b>kesehatan</b> dan layanan kami. Apa yang bisa saya bantu hari ini?");
 
     function sendMessage() {
         let message = chatInput.value.trim();
@@ -188,9 +192,29 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             body: JSON.stringify({ message: message })
         })
-        .then(res => res.json())
-        .then(data => appendMessage("Bot", data.reply))
-        .catch(() => appendMessage("Bot","Terjadi kesalahan koneksi."));
+        .then(res => {
+            if (!res.ok) {
+                console.error("HTTP Error:", res.status, res.statusText);
+                return res.json().then(data => {
+                    throw new Error(`HTTP ${res.status}: ${data.reply || res.statusText}`);
+                }).catch(parseErr => {
+                    throw new Error(`HTTP ${res.status}`);
+                });
+            }
+            return res.json();
+        })
+        .then(data => {
+            if (data.reply) {
+                appendMessage("Bot", data.reply);
+            } else {
+                console.error("No reply in response:", data);
+                appendMessage("Bot","Maaf, tidak ada balasan dari server.");
+            }
+        })
+        .catch(err => {
+            console.error("Chatbot Error:", err.message || err);
+            appendMessage("Bot", err.message || "Terjadi kesalahan koneksi. Silakan periksa koneksi internet atau coba lagi nanti.");
+        });
     }
 
     function appendMessage(sender, text) {

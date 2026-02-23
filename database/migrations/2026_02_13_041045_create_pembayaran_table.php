@@ -11,7 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pembayaran', function (Blueprint $table) {
+        if (! Schema::hasTable('pembayaran')) {
+            Schema::create('pembayaran', function (Blueprint $table) {
             $table->string('pembayaranId', 5)->primary();
             $table->string('customerId', 5);
             $table->string('pemesananId', 5);
@@ -35,7 +36,8 @@ return new class extends Migration
                   ->references('chatDokterId')
                   ->on('chatDokter')
                   ->onDelete('cascade');
-        });
+            });
+        }
     }
 
     /**

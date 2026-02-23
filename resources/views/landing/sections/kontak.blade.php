@@ -62,10 +62,7 @@
                 <div class="section-title text-center">
                     <h2 class="text-md mb-2">Contact us</h2>
                     <div class="divider mx-auto my-4"></div>
-                    <p class="mb-5">Laboriosam exercitationem molestias beatae eos pariatur, similique, excepturi mollitia sit perferendis maiores ratione aliquam?</p>
-                </div>
-            </div>
-        </div>
+                    <p class="mb-5">Konsultasikan keluhan kesehatan Anda kapan saja bersama tenaga profesional di RuangKonsul.</div>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <form id="contact-form" class="contact__form">

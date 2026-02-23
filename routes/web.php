@@ -115,9 +115,6 @@ Route::middleware('auth:customer')->group(function () {
     Route::get('/profile/edit', [CustomerAuthController::class, 'edit'])->name('profile.edit');
     Route::put('/profile/edit', [CustomerAuthController::class, 'update'])->name('profile.update');
 
-    Route::post('/appointment/store',
-        [LandingController::class, 'storeAppointment']
-    )->name('appointment.store');
 
     // ORDER & CHECKOUT
     Route::get('/checkout', [OrderController::class, 'checkout'])->name('checkout');
@@ -132,6 +129,12 @@ Route::middleware('auth:customer')->group(function () {
         Route::post('/chat/{id}', [DokterController::class, 'storeChat'])
             ->name('landing.dokter.storeChat');
 
+        // Payment routes for chat
+        Route::get('/chat/checkout/{chatId}', [DokterController::class, 'checkoutChat'])
+            ->name('landing.dokter.checkoutChat');
+        Route::post('/chat/pay/{chatId}', [DokterController::class, 'processChatPayment'])
+            ->name('landing.dokter.processChatPayment');
+
         // API untuk chat messages
         Route::post('/message/{chatDokterId}/send', [DokterController::class, 'sendMessage'])
             ->name('landing.dokter.message.send');
@@ -139,6 +142,8 @@ Route::middleware('auth:customer')->group(function () {
         Route::get('/message/{chatDokterId}/get', [DokterController::class, 'getMessages'])
             ->name('landing.dokter.message.get');
     });
+
+    Route::get('/appointment-schedule', [FormAppointmentController::class, 'index'])->name('appointment.schedule');
 
     Route::get('/cart', [CartController::class,'index'])->name('cart.index');
     Route::post('/cart/add', [CartController::class,'add'])->name('cart.add');

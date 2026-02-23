@@ -25,7 +25,7 @@
                             <td style="width:40%;">
                                 <div class="d-flex align-items-center">
                                     <div style="width:64px;height:64px;overflow:hidden;">
-                                        <img src="{{ asset($item->produk->gambar ?? '') }}" style="width:100%;height:100%;object-fit:cover;">
+                                        <img src="{{ asset('storage/' . ($item->produk->gambar ?? '')) }}" style="width:100%;height:100%;object-fit:cover;">
                                     </div>
                                     <div class="ml-3">
                                         <div>{{ $item->produk->produkName ?? '' }}</div>
